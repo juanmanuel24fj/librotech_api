@@ -1,0 +1,16 @@
+com\example\service\LibroService.class
+com\example\repository\LibroRepository.class
+com\example\controller\UsuarioController.class
+com\example\service\ReservaService.class
+com\example\controller\MediaController.class
+com\example\controller\ReservaController.class
+com\example\model\Libro.class
+com\example\DemoApplication.class
+com\example\repository\ReservaRepository.class
+com\example\model\Reserva.class
+com\example\repository\StorageService.class
+com\example\service\FileServiceStorageService.class
+com\example\controller\LibroController.class
+com\example\model\Usuario.class
+com\example\service\UsuarioService.class
+com\example\repository\UsuarioRepository.class
