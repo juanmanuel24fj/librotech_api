@@ -40,7 +40,7 @@ public class ReservaController {
             return ResponseEntity.badRequest().body("Error al devolver el libro.");
         }
     }
-    @GetMapping
+    @GetMapping("")
     public List<Reserva> obtenerTodosLosLibros() {
         return reservaRepository.findAll();
     }
