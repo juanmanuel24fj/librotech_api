@@ -70,7 +70,7 @@ public class SecurityConfig {
 				.requestMatchers(HttpMethod.GET,"/api/reservas").authenticated()
 				.requestMatchers("/api/reservas/**").authenticated()
 				.requestMatchers(HttpMethod.GET, "api/libros").authenticated()
-				.requestMatchers(HttpMethod.GET, "/api/usuario").hasAuthority("ROLE_USER")
+				.requestMatchers(HttpMethod.GET, "/api/usuario").authenticated()
 				.requestMatchers(HttpMethod.DELETE, "/api/usuario/**").hasAuthority("ROLE_ADMIN")
 				.requestMatchers(HttpMethod.POST, "api/libros/**").hasAuthority("ROLE_ADMIN")
 				.anyRequest().denyAll();
