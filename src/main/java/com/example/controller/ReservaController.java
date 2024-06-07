@@ -22,20 +22,10 @@ public class ReservaController {
     private ReservaRepository reservaRepository;
 
 
-     @PostMapping("/reservar/{libroId}")
-    public ResponseEntity<?> reservarLibro(@PathVariable Long libroId) {
+        @PostMapping("/reservar/{libroId}/{usuarioId}")
+    public ResponseEntity<?> reservarLibro(@PathVariable Long libroId, @PathVariable Long usuarioId) {
         try {
-            String username = getUsernameFromSecurityContext();
-            if (username == null) {
-                return ResponseEntity.status(401).body("No autorizado");
-            }
-
-            Usuario usuario = usuarioService.findByUsername(username);
-            if (usuario == null) {
-                return ResponseEntity.badRequest().body("Usuario no encontrado");
-            }
-
-            reservaService.reservarLibro(libroId, usuario.getId());
+            reservaService.reservarLibro(libroId, usuarioId);
             return ResponseEntity.ok().body("Reserva creada exitosamente.");
         } catch (RuntimeException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
